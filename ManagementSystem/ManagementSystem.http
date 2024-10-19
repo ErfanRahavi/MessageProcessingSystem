@@ -1,0 +1,15 @@
+@ManagementSystem_HostAddress = https://localhost:7075
+
+GET {{ManagementSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{ManagementSystem_HostAddress}}/api/health/module/health
+Content-Type: application/json
+
+{
+  //HealthCheckModel
+}
+
+###

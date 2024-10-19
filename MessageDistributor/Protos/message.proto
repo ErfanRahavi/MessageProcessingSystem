@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MessageProcessing.Distributor";
+
+service MessageProcessingService { 
+  rpc ProcessMessage (ProcessMessageRequest) returns (ProcessMessageResponse);
+}
+
+message ProcessMessageRequest {
+  string id = 1;
+  string message = 2;
+  map<string, string> analysisRules = 3;
+}
+
+message ProcessMessageResponse {
+  string id = 1;
+  string engine = 2;
+  int32 messageLength = 3;
+  bool isValid = 4;
+  map<string, bool> additionalFields = 5;
+}
